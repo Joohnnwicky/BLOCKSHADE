@@ -43,8 +43,8 @@
 
 ### Export & Documentation
 
-- [ ] **EXPORT-01**: User can export analysis results as JSON
-- [ ] **EXPORT-02**: User can export analysis results as CSV
+- [x] **EXPORT-01**: User can export analysis results as JSON — validated in 01-02
+- [x] **EXPORT-02**: User can export analysis results as CSV — validated in 01-02
 - [ ] **EXPORT-03**: User can export analysis results as PDF
 - [ ] **DOC-01**: User can read tool-specific user manuals (11 manuals)
 - [ ] **DOC-02**: User can follow API key registration guides (Tronscan, Etherscan, Blockchain)
@@ -75,8 +75,9 @@
 
 | Phase | Requirements | Status |
 |-------|--------------|--------|
-| 1 | CORE-01, CORE-02, CORE-04, ADDR-01, ADDR-02, ADDR-03, EXPORT-01, EXPORT-02 | Pending |
+| 1 | CORE-01, CORE-02, CORE-04, ADDR-01, ADDR-02, ADDR-03 | Pending |
 | 1 | CORE-03, CORE-05 | Validated (01-01) |
+| 1 | EXPORT-01, EXPORT-02 | Validated (01-02) |
 | 2 | ADDR-04, ADDR-05 | Pending |
 | 3 | TRACE-01, TRACE-02, TRACE-03 | Pending |
 | 4 | CROSS-01, CROSS-02 | Pending |

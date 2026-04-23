@@ -8,8 +8,8 @@
 ## Status
 
 **Current State:** Executing Phase 1
-**Last Activity:** Completed 01-01-PLAN.md (base template)
-**Current Focus:** Core Framework - next plan 01-02
+**Last Activity:** Completed 01-02-PLAN.md (core modules)
+**Current Focus:** Core Framework - next plan 01-03
 
 ---
 
@@ -17,8 +17,8 @@
 
 **Milestone:** v1
 **Phase:** 1 - Core Framework
-**Phase Status:** ◆ In Progress (1/7 plans complete)
-**Current Plan:** 02
+**Phase Status:** ◆ In Progress (2/7 plans complete)
+**Current Plan:** 03
 
 ---
 
@@ -29,7 +29,7 @@
 | Total Phases | 6 |
 | Completed Phases | 0 |
 | Total Requirements | 22 |
-| Validated Requirements | 2 |
+| Validated Requirements | 4 |
 
 ---
 
@@ -37,7 +37,7 @@
 
 | Phase | Status | Plans | Progress |
 |-------|--------|-------|----------|
-| 1 | ◆ In Progress | 7 | 14% (1/7) |
+| 1 | ◆ In Progress | 7 | 29% (2/7) |
 | 2 | ○ Pending | 4 | 0% |
 | 3 | ○ Pending | 3 | 0% |
 | 4 | ○ Pending | 2 | 0% |
@@ -50,6 +50,7 @@
 
 | Date | Action | Phase |
 |------|--------|-------|
+| 2026-04-23 | Completed 01-02: Core modules (API client, formatter, exporter) | 1 |
 | 2026-04-23 | Completed 01-01: Base template with sidebar + footer | 1 |
 | 2026-04-23 | Phase 1 planned (7 plans in 4 waves) | 1 |
 | 2026-04-23 | Project initialized | — |
@@ -71,20 +72,22 @@
 | Plan | Duration | Tasks | Files | Date |
 |------|----------|-------|-------|------|
 | 01-01 | 1610s | 1 | 1 | 2026-04-23 |
+| 01-02 | 552s | 3 | 4 | 2026-04-23 |
 
 ---
 
 ## Session Info
 
 **Last Session:** 2026-04-23
-**Stopped At:** Completed 01-01-PLAN.md
-**Resume File:** 01-02-PLAN.md
+**Stopped At:** Completed 01-02-PLAN.md
+**Resume File:** 01-03-PLAN.md
 
 ---
 
 ## Notes
 
 Base template establishes UI foundation for all child templates. Jinja2 blocks: title, sidebar, content, footer.
+Core modules (api_client, formatter, exporter) provide reusable infrastructure for all TRON/ETH tools.
 
 ---
-*Updated: 2026-04-23 after 01-01 completion*
+*Updated: 2026-04-23 after 01-02 completion*
