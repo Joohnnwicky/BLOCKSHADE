@@ -7,9 +7,9 @@
 
 ## Status
 
-**Current State:** Ready to execute Phase 1
-**Last Activity:** Phase 1 planned
-**Current Focus:** Core Framework setup
+**Current State:** Executing Phase 1
+**Last Activity:** Completed 01-01-PLAN.md (base template)
+**Current Focus:** Core Framework - next plan 01-02
 
 ---
 
@@ -17,7 +17,8 @@
 
 **Milestone:** v1
 **Phase:** 1 - Core Framework
-**Phase Status:** ◆ Planned (ready to execute)
+**Phase Status:** ◆ In Progress (1/7 plans complete)
+**Current Plan:** 02
 
 ---
 
@@ -28,7 +29,7 @@
 | Total Phases | 6 |
 | Completed Phases | 0 |
 | Total Requirements | 22 |
-| Validated Requirements | 0 |
+| Validated Requirements | 2 |
 
 ---
 
@@ -36,7 +37,7 @@
 
 | Phase | Status | Plans | Progress |
 |-------|--------|-------|----------|
-| 1 | ◆ Planned | 7 | 0% |
+| 1 | ◆ In Progress | 7 | 14% (1/7) |
 | 2 | ○ Pending | 4 | 0% |
 | 3 | ○ Pending | 3 | 0% |
 | 4 | ○ Pending | 2 | 0% |
@@ -49,14 +50,41 @@
 
 | Date | Action | Phase |
 |------|--------|-------|
+| 2026-04-23 | Completed 01-01: Base template with sidebar + footer | 1 |
 | 2026-04-23 | Phase 1 planned (7 plans in 4 waves) | 1 |
 | 2026-04-23 | Project initialized | — |
 
 ---
 
-## Notes
+## Decisions
 
-(None yet)
+| Decision | Rationale | Source |
+|----------|-----------|--------|
+| Tailwind CSS v4 via CDN | Zero-build styling, no Node.js required | 01-01-SUMMARY |
+| Fixed sidebar (256px) with request.path active state | Consistent navigation UX | 01-01-SUMMARY |
+| Fixed yellow footer for legal disclaimer | High visibility for compliance notice | 01-01-SUMMARY |
 
 ---
-*Updated: 2026-04-23*
+
+## Performance Metrics
+
+| Plan | Duration | Tasks | Files | Date |
+|------|----------|-------|-------|------|
+| 01-01 | 1610s | 1 | 1 | 2026-04-23 |
+
+---
+
+## Session Info
+
+**Last Session:** 2026-04-23
+**Stopped At:** Completed 01-01-PLAN.md
+**Resume File:** 01-02-PLAN.md
+
+---
+
+## Notes
+
+Base template establishes UI foundation for all child templates. Jinja2 blocks: title, sidebar, content, footer.
+
+---
+*Updated: 2026-04-23 after 01-01 completion*
