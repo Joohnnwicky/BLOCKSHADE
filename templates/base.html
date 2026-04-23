@@ -9,13 +9,13 @@
     - Fixed legal disclaimer footer (bottom, offset for sidebar)
 
     Child templates should:
-    - Extend this base template: {% extends "base.html" %}
-    - Override the 'title' block for page-specific titles
-    - Override the 'content' block for page-specific content
-    - Optionally override 'sidebar' or 'footer' blocks if needed
+    - Extend this base using: extends "base.html"
+    - Override the title block for page-specific titles
+    - Override the content block for page-specific content
+    - Optionally override sidebar or footer blocks if needed
 
     Tailwind CSS v4 is loaded via CDN for zero-build styling.
-    Active navigation state is detected via Jinja2 request.path variable.
+    Active navigation state is detected via request.path variable.
 -->
 <head>
     <!-- Meta and charset configuration for Chinese language support -->
