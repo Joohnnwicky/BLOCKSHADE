@@ -3,7 +3,7 @@
 import requests
 from typing import Optional, Dict, List
 
-TRONSCAN_BASE = "https://apilist.tronscanapi.com/api"
+TRONSCAN_BASE = "https://api.tronscan.org/api"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
     "Accept": "application/json"
@@ -22,7 +22,7 @@ def get_account_info(address: str) -> Optional[Dict]:
                         create_time, token_transfers, raw_data
         None if request fails
     """
-    url = f"{TRONSCAN_BASE}/accountv2"
+    url = f"{TRONSCAN_BASE}/account"
     params = {"address": address}
 
     try:
