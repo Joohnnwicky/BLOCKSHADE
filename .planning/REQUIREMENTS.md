@@ -13,7 +13,7 @@
 - [ ] **CORE-01**: User can start Flask application via run.bat (Windows) or run.sh (Linux/Mac)
 - [x] **CORE-02**: User sees homepage with tool overview and 4 group categories — validated in 01-03
 - [x] **CORE-03**: User can navigate between tools via sidebar — validated in 01-01
-- [ ] **CORE-04**: Application loads sample data to help users understand input format
+- [x] **CORE-04**: Application loads sample data to help users understand input format — validated in 01-05
 - [x] **CORE-05**: Application displays legal compliance disclaimer on all pages — validated in 01-01
 
 ### Address Analysis Tools
@@ -75,9 +75,10 @@
 
 | Phase | Requirements | Status |
 |-------|--------------|--------|
-| 1 | CORE-01, CORE-04, ADDR-01, ADDR-02, ADDR-03 | Pending |
+| 1 | CORE-01, ADDR-01, ADDR-02, ADDR-03 | Pending |
 | 1 | CORE-02 | Validated (01-03) |
 | 1 | CORE-03, CORE-05 | Validated (01-01) |
+| 1 | CORE-04 | Validated (01-05) |
 | 1 | EXPORT-01, EXPORT-02 | Validated (01-02) |
 | 2 | ADDR-04, ADDR-05 | Pending |
 | 3 | TRACE-01, TRACE-02, TRACE-03 | Pending |
@@ -86,4 +87,4 @@
 | 6 | DOC-01, DOC-02, EXPORT-03 | Pending |
 
 ---
-*Updated: 2026-04-23 after 01-03 completion*
+*Updated: 2026-04-23 after 01-05 completion*
