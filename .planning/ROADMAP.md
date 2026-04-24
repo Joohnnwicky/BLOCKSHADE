@@ -10,7 +10,7 @@
 
 | Milestone | Status | Phases | Progress |
 |-----------|--------|--------|----------|
-| v1 | ◆ Active | 0/6 | 0% |
+| v1 | ◆ Active | 2/6 | 33% |
 
 ---
 
@@ -53,15 +53,15 @@
 ### Phase 2: Address Analysis Tools
 **Goal:** 完成TRON地址行为分析和ETH交易查询工具（含跨链桥识别）
 
-**Status:** ○ Pending
+**Status:** ✅ Complete
 **Requirements:** ADDR-03, ADDR-04, ADDR-05
 **Plans:** 4 plans in 3 waves
 
 **Success Criteria:**
-- [ ] TRON地址行为分析工具完整可用
-- [ ] ETH交易查询工具可查询全部交易
-- [ ] ETH工具可识别跨链桥（Stargate）事件
-- [ ] ETH工具支持API密钥输入
+- [x] TRON地址行为分析工具完整可用
+- [x] ETH交易查询工具可查询全部交易
+- [x] ETH工具可识别跨链桥（Stargate）事件
+- [x] ETH工具支持API密钥输入
 
 **Dependencies:** Phase 1 complete
 
@@ -69,10 +69,10 @@
 
 | Wave | Plan | Objective | Requirements | Status |
 |------|------|-----------|--------------|--------|
-| 1 | [ ] 02-01-PLAN.md | TRON behavior analyzer backend + frontend | ADDR-03 | Pending |
-| 1 | [ ] 02-02-PLAN.md | ETH backend module (API + Stargate detector) | ADDR-04, ADDR-05 | Pending |
-| 2 | [ ] 02-03-PLAN.md | ETH frontend UI with API key input | ADDR-04, ADDR-05 | Pending |
-| 3 | [ ] 02-04-PLAN.md | Integration + end-to-end verification | ADDR-03, ADDR-04, ADDR-05 | Pending |
+| 1 | [x] 02-01-PLAN.md | TRON behavior analyzer backend + frontend | ADDR-03 | DONE |
+| 1 | [x] 02-02-PLAN.md | ETH backend module (API + Stargate detector) | ADDR-04, ADDR-05 | DONE |
+| 2 | [x] 02-03-PLAN.md | ETH frontend UI with API key input | ADDR-04, ADDR-05 | DONE |
+| 3 | [x] 02-04-PLAN.md | Integration + end-to-end verification | ADDR-03, ADDR-04, ADDR-05 | DONE |
 
 ---
 
@@ -169,4 +169,4 @@
 
 ---
 
-*Updated: 2026-04-24 after Phase 2 plan creation*
+*Updated: 2026-04-24 after Phase 2 completion*
