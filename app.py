@@ -2,11 +2,13 @@
 
 from flask import Flask, render_template
 from modules.tron.routes import tron_bp
+from modules.eth.routes import eth_bp
 
 app = Flask(__name__)
 
 # Register Blueprints
 app.register_blueprint(tron_bp)
+app.register_blueprint(eth_bp)
 
 
 @app.route('/')
