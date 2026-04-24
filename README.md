@@ -1,6 +1,7 @@
 # 区块猎影 BLOCKSHADE
 
-<img width="200" height="200" alt="19dc01baf1a89(1)" src="https://github.com/user-attachments/assets/5868dfda-eded-4bf7-95a7-fc880b606756" />
+<img width="2816" height="1536" alt="19dc01baf1a89" src="https://github.com/user-attachments/assets/16e1e2ee-4ea7-4c60-bdf9-5f7634e81fd8" />
+
 
 虚拟币犯罪调查工具集
 
