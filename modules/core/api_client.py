@@ -12,8 +12,9 @@ HEADERS = {
 USDT_CONTRACT = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
 DEFAULT_TIMEOUT = 10
 
-# Etherscan API configuration
-ETHERSCAN_BASE = "https://api.etherscan.io/api"
+# Etherscan API V2 configuration (V1 deprecated)
+ETHERSCAN_BASE = "https://api.etherscan.io/v2/api"
+ETH_CHAIN_ID = "1"  # Ethereum mainnet
 
 def get_account_info(address: str) -> Optional[Dict]:
     """Get TRON address basic info from Tronscan API.
@@ -96,6 +97,7 @@ def get_eth_transactions(address: str, api_key: str, limit: int = 100) -> List[D
         Empty list if request fails or no transactions
     """
     params = {
+        "chainid": ETH_CHAIN_ID,
         "module": "account",
         "action": "txlist",
         "address": address,
@@ -134,6 +136,7 @@ def get_erc20_transfers(address: str, api_key: str, limit: int = 100) -> List[Di
         Empty list if request fails or no transfers
     """
     params = {
+        "chainid": ETH_CHAIN_ID,
         "module": "account",
         "action": "tokentx",
         "address": address,
