@@ -371,7 +371,7 @@ function exportJSON() {
         a.href = url;
         a.download = filename;
         a.click();
-        window.URL.URL.revokeObjectURL(url);
+        window.URL.revokeObjectURL(url);
     })
     .catch(error => {
         alert('导出失败: ' + error.message);
@@ -402,7 +402,7 @@ function exportCSV() {
         a.href = url;
         a.download = filename;
         a.click();
-        window.URL.URL.revokeObjectURL(url);
+        window.URL.revokeObjectURL(url);
     })
     .catch(error => {
         alert('导出失败: ' + error.message);
