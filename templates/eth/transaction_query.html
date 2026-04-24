@@ -160,7 +160,7 @@ function displayResults(data) {
     const totalCount = transactions.total_count || 0;
     const normalCount = (transactions.normal || []).length;
     const erc20Count = (transactions.erc20 || []).length;
-    const stargateCount = (data.stargate_events || []).length;
+    const bridgeCount = (data.bridge_events || []).length;
 
     basicInfo.innerHTML = `
         <div class="bg-gray-50 p-3 rounded">
@@ -179,6 +179,10 @@ function displayResults(data) {
             <span class="text-sm text-gray-500">ERC20转账</span>
             <p class="font-bold text-gray-800">${erc20Count}</p>
         </div>
+        <div class="bg-gray-50 p-3 rounded">
+            <span class="text-sm text-gray-500">跨链桥事件</span>
+            <p class="font-bold text-gray-800">${bridgeCount}</p>
+        </div>
     `;
 
     // Display normal transactions
@@ -187,8 +191,8 @@ function displayResults(data) {
     // Display ERC20 transfers
     displayERC20Transfers(transactions.erc20 || []);
 
-    // Display Stargate events if any
-    displayStargateEvents(data.stargate_events || []);
+    // Display bridge events if any
+    displayBridgeEvents(data.bridge_events || []);
 }
 
 function formatTimestamp(ts) {
@@ -296,7 +300,7 @@ function displayERC20Transfers(transfers) {
     `;
 }
 
-function displayStargateEvents(events) {
+function displayBridgeEvents(events) {
     const container = document.getElementById('stargate-events');
     const list = document.getElementById('stargate-list');
 
@@ -310,8 +314,8 @@ function displayStargateEvents(events) {
     list.innerHTML = events.map(event => `
         <div class="bg-white rounded p-4 shadow-sm border border-blue-200">
             <div class="flex justify-between items-start mb-2">
-                <p class="font-bold text-gray-800">${event.contract_type || 'Stargate合约交互'}</p>
-                <span class="text-xs text-gray-500">${formatTimestamp(event.timestamp)}</span>
+                <p class="font-bold text-gray-800">${event.bridge || '跨链桥合约交互'}</p>
+                <span class="text-xs text-gray-500">${event.time || '未知'}</span>
             </div>
             <div class="grid grid-cols-2 gap-2 text-sm">
                 <div>
@@ -321,23 +325,29 @@ function displayStargateEvents(events) {
                     </a>
                 </div>
                 <div>
-                    <span class="text-gray-500">合约类型:</span>
-                    <span class="ml-1 font-medium">${event.contract_type || '未知'}</span>
+                    <span class="text-gray-500">跨链桥:</span>
+                    <span class="ml-1 font-medium">${event.bridge || '未知'}</span>
                 </div>
                 <div>
                     <span class="text-gray-500">发送方:</span>
-                    <span class="ml-1 text-xs">${event.from_address ? event.from_address.slice(0, 8) + '...' + event.from_address.slice(-6) : '未知'}</span>
+                    <span class="ml-1 text-xs">${event.from ? event.from.slice(0, 8) + '...' + event.from.slice(-6) : '未知'}</span>
                 </div>
                 <div>
                     <span class="text-gray-500">接收方:</span>
-                    <span class="ml-1 text-xs">${event.to_address ? event.to_address.slice(0, 8) + '...' + event.to_address.slice(-6) : '未知'}</span>
+                    <span class="ml-1 text-xs">${event.to ? event.to.slice(0, 8) + '...' + event.to.slice(-6) : '未知'}</span>
                 </div>
                 <div>
                     <span class="text-gray-500">金额:</span>
-                    <span class="ml-1 font-medium">${event.value || '未知'}</span>
+                    <span class="ml-1 font-medium">${event.amount ? event.amount.toFixed(6) : '未知'} ${event.token || 'ETH'}</span>
                 </div>
+                ${event.dest_chain ? `
+                <div>
+                    <span class="text-gray-500">目标链:</span>
+                    <span class="ml-1 font-medium text-blue-600">${event.dest_chain}</span>
+                </div>
+                ` : ''}
             </div>
-            <p class="text-xs text-blue-600 mt-2">此交易与Stargate跨链桥合约交互，可能涉及跨链资产转移。</p>
+            <p class="text-xs text-blue-600 mt-2">此交易与跨链桥合约交互，可能涉及跨链资产转移。</p>
         </div>
     `).join('');
 }
