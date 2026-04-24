@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in_progress
-last_updated: "2026-04-24T18:10:00.000Z"
-last_activity: Phase 6 Plan 04a EXECUTED (documentation routes + API guide)
+status: complete
+last_updated: "2026-04-24T20:30:00.000Z"
+last_activity: Phase 6 COMPLETE - Documentation & Export (6 plans: all executed)
 progress:
   total_phases: 6
-  completed_phases: 5
+  completed_phases: 6
   planned_phases: 6
   total_plans: 30
   completed_plans: 30
@@ -23,17 +23,17 @@ progress:
 
 ## Status
 
-**Current State:** Phase 6 Complete - Documentation & Export
-**Last Activity:** Phase 6 Plan 04a execution (documentation routes + API guide)
-**Current Focus:** Phase 6 - Documentation & Export (complete)
+**Current State:** Milestone v1.0 Complete
+**Last Activity:** Phase 6 execution complete (PDF export + 11 manuals + API guide)
+**Current Focus:** Ready for final review
 
 ---
 
 ## Current Position
 
 **Milestone:** v1
-**Phase:** Phase 6 - Documentation & Export (COMPLETE)
-**Phase Status:** 6/6 plans executed (01, 02, 03a, 03b, 04a, 04b complete)
+**Phase:** Phase 6 - Documentation & Export (Complete)
+**Phase Status:** 6/6 plans complete
 
 ---
 
@@ -42,10 +42,10 @@ progress:
 | Metric | Count |
 |--------|-------|
 | Total Phases | 6 |
-| Completed Phases | 5 |
-| Planned Phases | 5 |
+| Completed Phases | 6 |
+| Planned Phases | 6 |
 | Total Requirements | 22 |
-| Validated Requirements | 17 |
+| Validated Requirements | 22 |
 
 ---
 
@@ -58,7 +58,7 @@ progress:
 | 3 | ✅ Complete | 5 | 100% (5/5) |
 | 4 | ✅ Complete | 5 | 100% (5/5) |
 | 5 | ✅ Complete | 3 | 100% (3/3) |
-| 6 | ⏳ Partial | 6 | 67% (4/6) |
+| 6 | ✅ Complete | 6 | 100% (6/6) |
 
 ---
 
@@ -66,40 +66,31 @@ progress:
 
 | Date | Action | Phase |
 |------|--------|-------|
+| 2026-04-24 | Phase 6 EXECUTED - Documentation & Export (6 plans) | 6 |
+| 2026-04-24 | 11 Tool Manuals created (4-section structure) | 6 |
+| 2026-04-24 | API Guide created (Tronscan, Etherscan, Blockstream) | 6 |
+| 2026-04-24 | PDF export infrastructure + buttons on all tools | 6 |
 | 2026-04-24 | Phase 5 EXECUTED - Case handling tools (3 plans) | 5 |
-| 2026-04-24 | Asset freeze template generator (3-step form) | 5 |
-| 2026-04-24 | Obfuscation attack detector (4 attack types) | 5 |
-| 2026-04-24 | Multi-chain monitor (TRON/ETH/BTC) | 5 |
-| 2026-04-24 | Phase 4 COMPLETED - Cross-chain analysis tools | 4 |
 
 ---
 
 ## Notes
 
-Phase 5 Case Handling Tools COMPLETED:
+Phase 6 Documentation & Export COMPLETED:
 
-- 多链监控: Multi-chain address status tracking (manual refresh)
-  - TRON/ETH/BTC support
-  - Blockstream API for BTC balance
-  - Status cards with balance, tx count, last active
-- 混淆对抗: ETH attack detection with 4 heuristics
-  - Sandwich, Flash Loan, Dusting, Protocol vulnerability
-  - HIGH/MEDIUM/LOW confidence scoring
-  - ETH-only scope per D-24
-- 资产追回: Asset freeze template generator
-  - 3-step form per D-39
-  - 4 field categories per D-34
-  - Import from monitor/cluster/obfuscation
-
-Key Integration:
-- sessionStorage: cit_monitor_export, cit_cluster_export, cit_obfuscation_export → asset freeze import
-- All 3 tools registered under case_bp Blueprint
+- PDF Export: WeasyPrint integration, exporter.py PDF functions, docs Blueprint
+- PDF Buttons: Added to all 11 tool templates (JSON/CSV/PDF trio)
+- Manual Homepage: 11 tool cards in 4 categories
+- 11 Manual Pages: 4-section structure (操作步骤, 结果解释, API密钥说明, 案例演示)
+- API Guide: Tronscan/Etherscan/Blockstream registration guides
+- Sidebar: 使用手册 + API获取指南 links
 
 Previous phases:
+- Phase 5: Case handling tools (monitor, obfuscation, asset freeze)
 - Phase 4: Cross-chain analysis (clustering, cross-border)
 - Phase 3: Transaction tracking (Uniswap, Mixer, BTC)
 - Phase 2: Address analysis (TRON behavior, ETH transaction query)
 - Phase 1: Core framework + TRON suspicious analyzer
 
 ---
-*Updated: 2026-04-24 after Phase 5 execution*
+*Updated: 2026-04-24 after Phase 6 completion*
