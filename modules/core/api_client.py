@@ -1,8 +1,9 @@
-"""Tronscan API client for TRON blockchain queries"""
+"""Tronscan and Etherscan API clients for blockchain queries"""
 
 import requests
 from typing import Optional, Dict, List
 
+# Tronscan API configuration
 TRONSCAN_BASE = "https://api.tronscan.org/api"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -10,6 +11,9 @@ HEADERS = {
 }
 USDT_CONTRACT = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
 DEFAULT_TIMEOUT = 10
+
+# Etherscan API configuration
+ETHERSCAN_BASE = "https://api.etherscan.io/api"
 
 def get_account_info(address: str) -> Optional[Dict]:
     """Get TRON address basic info from Tronscan API.
@@ -75,5 +79,80 @@ def get_trc20_transfers(address: str, limit: int = 50) -> List[Dict]:
             return []
         data = response.json()
         return data.get('token_transfers', [])
+    except Exception:
+        return []
+
+def get_eth_transactions(address: str, api_key: str, limit: int = 100) -> List[Dict]:
+    """Get normal ETH transactions for an address from Etherscan API.
+
+    Args:
+        address: ETH wallet address (0x prefix, 40 hex chars)
+        api_key: User-provided Etherscan API key (per-query input, never stored)
+        limit: Maximum number of transactions to fetch (default 100)
+
+    Returns:
+        list of transaction dicts with keys: blockNumber, timeStamp, hash,
+                                            from, to, value, gas, gasUsed, isError
+        Empty list if request fails or no transactions
+    """
+    params = {
+        "module": "account",
+        "action": "txlist",
+        "address": address,
+        "apikey": api_key,
+        "page": 1,
+        "offset": limit,
+        "sort": "desc"
+    }
+
+    try:
+        response = requests.get(ETHERSCAN_BASE, params=params, headers=HEADERS, timeout=DEFAULT_TIMEOUT)
+        if response.status_code != 200:
+            return []
+        data = response.json()
+
+        # Etherscan returns status='1' for success, '0' for error/no results
+        if data.get('status') != '1':
+            return []
+
+        return data.get('result', [])
+    except Exception:
+        return []
+
+def get_erc20_transfers(address: str, api_key: str, limit: int = 100) -> List[Dict]:
+    """Get ERC20 token transfers for an address from Etherscan API.
+
+    Args:
+        address: ETH wallet address (0x prefix, 40 hex chars)
+        api_key: User-provided Etherscan API key (per-query input, never stored)
+        limit: Maximum number of transfers to fetch (default 100)
+
+    Returns:
+        list of transfer dicts with keys: blockNumber, timeStamp, hash,
+                                          from, to, value, tokenSymbol,
+                                          tokenName, tokenDecimal
+        Empty list if request fails or no transfers
+    """
+    params = {
+        "module": "account",
+        "action": "tokentx",
+        "address": address,
+        "apikey": api_key,
+        "page": 1,
+        "offset": limit,
+        "sort": "desc"
+    }
+
+    try:
+        response = requests.get(ETHERSCAN_BASE, params=params, headers=HEADERS, timeout=DEFAULT_TIMEOUT)
+        if response.status_code != 200:
+            return []
+        data = response.json()
+
+        # Etherscan returns status='1' for success, '0' for error/no results
+        if data.get('status') != '1':
+            return []
+
+        return data.get('result', [])
     except Exception:
         return []
