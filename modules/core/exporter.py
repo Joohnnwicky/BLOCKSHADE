@@ -76,17 +76,18 @@ def export_csv(data: Dict[str, Any]) -> str:
 
     return output.getvalue()
 
-def get_export_filename(address: str, format_type: str) -> str:
+def get_export_filename(address: str, format_type: str, analysis_type: str = 'analysis') -> str:
     """Generate filename for export download.
 
     Args:
         address: TRON address being analyzed
         format_type: "json" or "csv"
+        analysis_type: Type of analysis ("analysis", "behavior", etc.)
 
     Returns:
-        Filename like "tron_analysis_TUtP...NNw_20240115.json"
+        Filename like "tron_behavior_TUtP...NNw_20240115.json"
     """
     from datetime import datetime
     date_str = datetime.now().strftime('%Y%m%d')
     addr_short = address[:8] + address[-4:] if len(address) > 12 else address
-    return f"tron_analysis_{addr_short}_{date_str}.{format_type}"
+    return f"tron_{analysis_type}_{addr_short}_{date_str}.{format_type}"
